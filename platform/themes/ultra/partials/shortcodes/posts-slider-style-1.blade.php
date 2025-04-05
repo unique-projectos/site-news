@@ -1,4 +1,4 @@
-<div class="home-featured">
+<div class="home-featured mt-4">
     <div class="container">
         <div class="row">
             <div class="col-12">

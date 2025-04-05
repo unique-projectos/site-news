@@ -4,12 +4,12 @@
         'telegram' => Theme::asset()->url('images/telegram.svg')
     ]
 @endphp
-<div class="top-bar pt-10 pb-10 {{ $background }} {{ $color ?? '' }} d-none d-md-block">
+<div class="top-bar pt-10 pb-10 text-white d-none d-md-block"  >
     <div class="container">
         <div class="row">
             <div class="col-6 text-left">
                 @if (is_plugin_active('language'))
-                    <div class="language d-inline-block font-small {{ $color ?? '' }}">
+                    <div class="language d-inline-block font-small text-white">
                         {!! Theme::partial('language-switcher', ['color' => $color ?? '']) !!}
                     </div>
                 @endif
@@ -33,13 +33,13 @@
                     <div class="user-account d-inline-block font-small">
                         @if (!auth('member')->check())
                             <a href="{{ route('public.member.login') }}" role="button"
-                               class="{{ $color ?? '' }}">
+                               class="text-white">
                                 <i class="ti-user"></i>
                                 <span>{{ __('Login') }}</span>
                             </a>
                         @else
                             <a class="dropdown-toggle" href="#" role="button"
-                               class="{{ $color ?? '' }}"
+                               class="text-white"
                                id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="ti-user"></i>
                                 <span>{{ __('Account') }}</span>
