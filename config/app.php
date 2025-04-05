@@ -52,7 +52,16 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+   'url' => env('APP_URL', function () {
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $scheme = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http';
+            $port = isset($_SERVER['SERVER_PORT']) && !in_array($_SERVER['SERVER_PORT'], ['80', '443'])
+                ? ':' . $_SERVER['SERVER_PORT']
+                : '';
+            return $scheme . '://' . $_SERVER['HTTP_HOST'] . $port;
+        }
+        return 'http://localhost:8000';
+    }),
 
     /*
     |--------------------------------------------------------------------------

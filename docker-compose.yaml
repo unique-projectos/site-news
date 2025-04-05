@@ -1,0 +1,56 @@
+services:
+  server:
+    build:
+      context: .
+    container_name: app-knews
+    ports:
+      - "8084:80"
+    restart: always
+    volumes:
+      - ./:/var/www/html
+      - ./storage:/var/www/html/storage
+      - ./bootstrap/cache:/var/www/html/bootstrap/cache
+    environment:
+      PHP_SESSION_PATH: "/var/www/html/application/sessions"
+      APP_NAME: "App Knews"
+      APP_ENV: local
+      APP_KEY: base64:lfRbtuf0JOWf768dxQQq5dZ03USyGUxnzBdKTMygONY
+      APP_DEBUG: true
+      APP_URL: ''
+      LOG_CHANNEL: stack
+      LOG_DEPRECATIONS_CHANNEL: null
+      LOG_LEVEL: debug
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: db_knews
+      DB_USERNAME: docker
+      DB_PASSWORD: docker123
+    depends_on:
+      - mysql
+    networks:
+      - app-knews-network
+
+  mysql:
+    image: mysql:8.0
+    container_name: knews_mysql
+    restart: unless-stopped
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_DATABASE: db_knews
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker123
+    volumes:
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./docker/db_data:/var/lib/mysql
+    networks:
+      - app-knews-network
+
+volumes:
+  db_data:
+
+networks:
+  app-knews-network:
+    driver: bridge
