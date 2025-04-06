@@ -17,7 +17,7 @@
                     <ul>
                         <li>
                             <span class="font-small">
-                            <img src="../../public/images/bg-20.png" width="50" height="50"
+                            <img src="/themes/ultra/images/logos/luele.png" width="100" height="40"
                             alt="icon">
                             </span>
                         </li>

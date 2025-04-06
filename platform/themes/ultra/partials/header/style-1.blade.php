@@ -10,7 +10,7 @@
                     {!! Theme::partial('header.logo-tablet') !!}
                     {!! Theme::partial('header.logo-mobile') !!}
 
-                    <div class="main-nav text-center d-none d-lg-block text-white" style="display: none;background:#005236;">
+                    <div class="main-nav text-center d-none d-lg-block text-white" style="display: none;background:transparent;">
                         <nav class="text-white">
                             {!! Menu::renderMenuLocation('main-menu', [
                                 'view'    => 'menu',
