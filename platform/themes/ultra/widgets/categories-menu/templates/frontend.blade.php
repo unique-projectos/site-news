@@ -1,4 +1,4 @@
-<div class="sidebar-widget widget_categories mb-50">
+<div class="sidebar-widget widget_categories mb-50 ">
     <div class="widget-header position-relative mb-20">
         <h5 class="widget-title mt-5">{{__('Categories')}}</h5>
     </div>

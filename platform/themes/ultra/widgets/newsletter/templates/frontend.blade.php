@@ -1,8 +1,5 @@
-<div class="sidebar-widget widget_newsletter mb-30">
-    <div class="widget-header position-relative mb-30">
-        <h5 class="widget-title mt-5 mb-30 color-white">{{ $config['name'] }}</h5>
-        <div class="letter-background">{{ $config['name'][0] ?? '' }}</div>
-    </div>
+<div class="sidebar-widget widget_newsletter mb-30 mt-30">
+
     <div class="newsletter">
         <p class="color-white">{{ $config['description'] }}</p>
         <div class="footer-form">
@@ -13,7 +10,8 @@
                     @csrf
                     <input type="email" name="email" id="newsletter-form-email"
                            placeholder="{{ __('Enter your email') }}"
-                           class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
+                           style="border-top-color: #fff!important;"
+                           class="placeholder form-control hide-on-focus" onfocus="this.placeholder = ''"
                            onblur="this.placeholder = ' Email Address '">
                     <div class="form-icon">
                         <button type="submit" name="submit" id="newsletter-submit"
@@ -31,4 +29,22 @@
             </div>
         </div>
     </div>
+
+    <div class="post-block-list post-module-1 post-module-5 text-white">
+        @if (theme_option('address'))
+            <p class="text-white">
+                <strong class="text-white">{{ __('Address') }}</strong>
+                <br>
+                {{ theme_option('address') }}
+            </p>
+        @endif
+        @if (theme_option('phone'))
+            <p class="text-white">
+                <strong class="text-white">{{ __('Phone') }}</strong>
+                <br>
+                {{ theme_option('phone') }}
+            </p>
+        @endif
+    </div>
 </div>
+
