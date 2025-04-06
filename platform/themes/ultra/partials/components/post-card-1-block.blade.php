@@ -1,7 +1,7 @@
 @php $category = $post->categories->first(); @endphp
 <div class="post-thumb mb-30 border-radius-5 img-hover-scale animate-conner-box">
     <a href="{{ get_external_link($post) }}" {{ is_external_link($post) ? 'target="_blank"' : '' }}>
-        <img class="lazy" style="width: 100%"
+        <img class="lazy" style="width: 80%;height: 70%!important"
             data-src="{{ RvMedia::getImageUrl($post->image, 'medium', false, RvMedia::getDefaultImage()) }}"
             src="{{ RvMedia::getImageUrl(theme_option('img_loading')) }}"
             alt="{{ $post->name }}">

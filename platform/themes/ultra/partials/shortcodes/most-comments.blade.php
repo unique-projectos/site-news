@@ -1,4 +1,4 @@
-<div class="pt-50 pb-50 {{ $shortcode->background_style }}">
+<div class="pt-50 pb-50 {{ $shortcode->background_style }} d-none">
     <div class="container">
         <div class="sidebar-widget">
             <div class="widget-header position-relative mb-30">

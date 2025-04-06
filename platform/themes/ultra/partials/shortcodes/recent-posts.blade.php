@@ -89,9 +89,6 @@
                         </div>
                     </div>
 
-                    @if($shortcode->ads_location)
-                        {!! display_ad($shortcode->ads_location, ['class' => 'sidebar-widget mb-30 text-center']) !!}
-                    @endif
                 </div>
             </div>
         </div>

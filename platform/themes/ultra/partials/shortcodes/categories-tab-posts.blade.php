@@ -1,12 +1,10 @@
 <div class="pt-50 {{ $shortcode->background_style }}">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg">
                 <div class="row d-flex justify-content-between">
                     <div class="col-lg-3 col-md-3">
                         <div class="widget-header position-relative mb-30">
-                            <h5 class="widget-title mb-30 text-uppercase color4 font-weight-ultra">{{ $shortcode->title }}</h5>
-                            <div class="letter-background">{{ $shortcode->subtitle }}</div>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
@@ -47,17 +45,17 @@
                                                 </div>
                                             @endif
                                             <div class="col-md-6">
-                                                <div class="row">
+                                                <div class="col">
                                                     @foreach ($item['posts'] as $post)
-                                                        @if($loop->index == 0)
-                                                            @continue
-                                                        @endif
-                                                        <div class="col-md-6 col-sm-6 sm-grid-content mb-30">
+                                                        @if($loop->index >2)
+                                                        <div class=" d-flex col-lg-10 mt-2 col-md-6 col-sm-6 sm-grid-content mb-30" style="margin-left:-4%;">
                                                             {!! Theme::partial('components.post-card-1-block-simple', [
                                                             'post' => $post,
                                                             'imageType' => 'medium'
                                                             ]) !!}
                                                         </div>
+                                                        @endif
+
                                                     @endforeach
                                                 </div>
                                             </div>
@@ -71,17 +69,6 @@
                 </div>
             </div>
 
-            <div class="col-lg-4">
-                <div class="widget-area">
-                    @if($shortcode->show_follow_us_section)
-                        {!! Theme::partial('components.sidebar-social') !!}
-                    @endif
-
-                    @if($shortcode->ads_location)
-                        {!! display_ad($shortcode->ads_location, ['class' => 'sidebar-widget mb-30 text-center']) !!}
-                    @endif
-                </div>
-            </div>
         </div>
     </div>
 </div>
