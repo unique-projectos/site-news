@@ -1,7 +1,7 @@
 @php
     $columnStyle = isset($columnStyle) ? $columnStyle : [6, 6];
 @endphp
-<div class="col-md-{{ $columnStyle[0] }}">
+<div class=" col-lg col-md-{{ $columnStyle[0] }}">
     <div class="post-thumb position-relative thumb-overlay mr-20">
         <div class="img-hover-slide border-radius-5 position-relative lazy"
              data-bg="{{ RvMedia::getImageUrl($post->image, 'medium', false, RvMedia::getDefaultImage()) }}"
@@ -21,7 +21,7 @@
     </div>
 </div>
 
-<div class="col-md-{{ $columnStyle[1] }}">
+<div class="col-lg col-md-{{ $columnStyle[1] }}">
     <div class="post-content">
         <div class="entry-meta meta-0 font-small mb-15">
             @php $category = $post->categories->first(); @endphp

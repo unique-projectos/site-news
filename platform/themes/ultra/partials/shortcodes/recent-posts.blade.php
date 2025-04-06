@@ -9,7 +9,7 @@
                 </div>
                 <div class="loop-list">
                     @foreach (get_recent_posts($shortcode->limit ?? 4) as $post)
-                        <article class="row mb-50">
+                        <article class="col-lg mb-50">
                             {!! Theme::partial('components.post-card-2-block', ['post' => $post]) !!}
                         </article>
                     @endforeach

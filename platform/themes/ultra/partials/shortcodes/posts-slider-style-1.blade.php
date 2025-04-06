@@ -1,9 +1,9 @@
-<div class="home-featured" style="margin-top: -15%;position:relative">
+<div class="home-featured mb-2" style="margin-top: -10%;position:relative;height: 400px!important;">
     <div class="container">
-        <div style="height: auto!important;" class="row h-auto">
+        <div class="row h-auto">
             <div class="col-12">
                 <div class="featured-slider-1 border-radius-10">
-                    <div class="featured-slider-1-items mx-2" style="margin-top: 1%;margin-bottom:-7%;" >
+                    <div class="featured-slider-1-items mx-2" style="margin-top: 1%;margin-bottom:1%;" >
                         @foreach ($posts as $key => $post)
                             <div class="slider-single " >
                                 <div class="row no-gutters">
@@ -60,5 +60,12 @@
                 </div>
             </div>
         </div>
+        <div class="widget-header position-relative  m-4">
+            <h5 class="widget-title mb-10">News</h5>
+            <div class="bt-1 border-color-1"></div>
+            <br>
+        </div>
     </div>
+
 </div>
+

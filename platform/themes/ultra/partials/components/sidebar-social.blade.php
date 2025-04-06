@@ -5,7 +5,7 @@
     ]
 @endphp
 <!--Widget social-->
-<div class="sidebar-widget widget-social-network mb-30">
+<div class="sidebar-widget widget-social-network mb-30 d-none">
     <div class="widget-header position-relative mb-20 pb-10">
         <h5 class="widget-title mb-10">{{ !empty($config['title']) ? $config['title'] : __('Follow Us') }}</h5>
         <div class="bt-1 border-color-1"></div>

@@ -1,6 +1,6 @@
 <!--Editor's Picked Start-->
 <div class="widgets-post-carausel-1 pt-40 mb-40">
-    <div class="container">
+    <div class="container d-none">
         <div class="post-carausel-1 border-radius-10 bg-white">
             <div class="row no-gutters">
                 <div class="col col-1-5 background6 editor-picked-left d-none d-lg-block">
@@ -21,4 +21,5 @@
         </div>
     </div>
 </div>
+<br>
 <!--Editor's Picked End-->
