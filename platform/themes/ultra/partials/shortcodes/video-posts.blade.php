@@ -1,4 +1,4 @@
-<div class="video-area background_dark area-padding pt-50 pb-50">
+<div class="video-area background_dark area-padding pt-50 pb-50 d-none">
     <div class="container">
         <div class="row">
             <div class="col-12">

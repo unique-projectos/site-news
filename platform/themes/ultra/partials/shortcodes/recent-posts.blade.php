@@ -1,5 +1,5 @@
 <!-- Recent Posts Start -->
-<div class="recent-area pt-50 pb-50 {{ $shortcode->background_style }}">
+<div class="recent-area pt-50 pb-50 {{ $shortcode->background_style }} d-none">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-12">
