@@ -4,7 +4,7 @@
         'telegram' => Theme::asset()->url('images/telegram.svg')
     ]
 @endphp
-<div class="top-bar pt-10 pb-10 text-white d-none d-md-block"  >
+<div class="top-bar pt-10 pb-10 text-white d-none d-md-block">
     <div class="container">
         <div class="row">
             <div class="col-6 text-left">
@@ -17,7 +17,7 @@
                     <ul>
                         <li>
                             <span class="font-small">
-                            <img src="../../public/images/logo-2.png" width="12"
+                            <img src="../../public/images/bg-20.png" width="50" height="50"
                             alt="icon">
                             </span>
                         </li>

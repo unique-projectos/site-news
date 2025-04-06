@@ -1,6 +1,6 @@
 <ul {!! $options !!} >
     @foreach ($menu_nodes as $key => $row)
-        <li class="cat-item @if ($row->has_child) menu-item-has-children @endif @if ($row->css_class) {{ $row->css_class }} @endif @if ($row->active) current-menu-item @endif" >
+        <li class=" m-1 cat-item @if ($row->has_child) menu-item-has-children @endif @if ($row->css_class) {{ $row->css_class }} @endif @if ($row->active) current-menu-item @endif" >
             <a style="color:white!important" href="{{ url($row->url) }}" @if ($row->target !== '_self') target="{{ $row->target }}" @endif >
                 @if ($row->icon_font) <i class="{{ trim($row->icon_font) }}"></i> @endif {{ $row->title }}
             </a>

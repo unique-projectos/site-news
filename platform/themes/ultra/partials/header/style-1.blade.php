@@ -1,4 +1,4 @@
-<header class="main-header header-style-1 text-white" style="height: 35vh;background:#005236;">
+<header class=" header-style-1 text-white" style="height: 35vh;background:#005236;">
     {!! Theme::partial('header.top-bar', ['background' => 'background-white']) !!}
 
     <div class="header-bottom header-sticky  text-center text-white" style="background:#005236;">
