@@ -3,13 +3,7 @@
         <div class="col-lg-6 col-md-12 align-center-vertical order-2 order-lg-1">
             <div class="entry-header entry-header-1">
                 @php $category = $post->categories->first(); @endphp
-                @if ($category)
-                    <div class="entry-meta meta-0 font-small mb-30">
-                        <a href="{{ $category->url }}">
-                            <span class="post-cat {{ random_background() }} color-white">{{ $category->name }}</span>
-                        </a>
-                    </div>
-                @endif
+       
                 <h1 class="post-title">
                     <a href="{{ get_external_link($post) }}" {{ is_external_link($post) ? 'target="_blank"' : '' }}>{{ $post->name }}</a>
                 </h1>

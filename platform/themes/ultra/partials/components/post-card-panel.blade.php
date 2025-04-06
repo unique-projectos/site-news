@@ -16,11 +16,7 @@
         <div class="post-content-overlay">
             <div class="entry-meta meta-0 font-small mb-10">
                 @php $category = $post->categories->first(); @endphp
-                @if ($category)
-                    <a href="{{ $category->url }}">
-                        <span class="post-cat {{ random_background() }} color-white font-small">{{ $category->name }}</span>
-                    </a>
-                @endif
+             
             </div>
             <h6 class="post-title">
                 <a class="color-white" href="{{ get_external_link($post) }}" {{ is_external_link($post) ? 'target="_blank"' : '' }}>{{ $post->name }}</a>

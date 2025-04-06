@@ -13,14 +13,7 @@
                                         <div class="post-content-overlay">
                                             <div class="container">
                                                 @php $category = $post->categories->first(); @endphp
-                                                @if ($category)
-                                                    <div class="entry-meta meta-0 font-small mb-10">
-                                                        <a href="{{ $category->url }}">
-                                                        <span
-                                                            class="post-cat {{ random_background() }} color-white font-small">{{ $category->name }}</span>
-                                                        </a>
-                                                    </div>
-                                                @endif
+                                         
                                                 <h1 class="post-title mt-20 mb-15">
                                                     <a class="color-white" href="{{ get_external_link($post) }}" {{ is_external_link($post) ? 'target="_blank"' : '' }}>{{ $post->name }}</a>
                                                 </h1>

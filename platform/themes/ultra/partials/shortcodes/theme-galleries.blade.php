@@ -2,14 +2,15 @@
     <div class="container">
         <div class="sidebar-widget">
             <div class="widget-header position-relative mb-30">
-                <h5 class="widget-title mb-30 text-uppercase color1 font-weight-ultra">{!! clean($shortcode->title) !!}</h5>
+                <h5 class="widget-title mb-30 text-uppercase color1 font-weight-ultra">Aniversáriantes</h5>
                 <div class="letter-background">{!! clean($shortcode->subtitle) !!}</div>
             </div>
 
             <div class="post-carausel-2 post-module-1 row">
                 @foreach (get_galleries($shortcode->limit) as $gallery)
-                    <div class="col">
-                        <div class="post-thumb position-relative">
+                @if($loop->index )
+                    <div class="col-4 gap-2">
+                        <div class="post-thumb position-relative ">
                             <div class="thumb-overlay img-hover-slide border-radius-5 position-relative lazy"
                                 data-bg="{{ RvMedia::getImageUrl($gallery->image, 'medium', false, RvMedia::getDefaultImage()) }}"
                                 style="background-image: url({{ RvMedia::getImageUrl(theme_option('img_loading')) }})">
@@ -29,6 +30,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 @endforeach
             </div>
         </div>

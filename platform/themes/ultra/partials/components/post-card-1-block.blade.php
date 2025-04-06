@@ -6,17 +6,10 @@
             src="{{ RvMedia::getImageUrl(theme_option('img_loading')) }}"
             alt="{{ $post->name }}">
     </a>
-    @if(is_video_post($post))
-        <span class="top-right-icon background3"><i class="ti-video-camera"></i></span>
-    @endif
-    @if(is_external_link($post))
-        <span class="top-right-icon background10"><i class="ti-link" aria-hidden="true"></i></span>
-    @endif
-
+ 
     @if($category && !empty($categoryInImage))
         <div class="post-content-overlay entry-meta meta-0 font-small transition-ease-04">
             <a href="{{ $category->url }}">
-                <span class="post-cat {{ random_background() }} color-white">{{ $category->name }}</span>
             </a>
         </div>
     @endif
@@ -29,7 +22,6 @@
     <div class="entry-meta meta-0 font-small mb-15">
         @if ($category && empty($categoryInImage))
             <a href="{{ $category->url }}">
-                <span class="post-cat {{ random_background() }} color-white">{{ $category->name }}</span>
             </a>
         @endif
     </div>
@@ -45,9 +37,7 @@
         </span>
         <span class="hit-count"><i class="ti-bolt"></i>{{ number_format($post->views) . ' ' . __('views') }}</span>
     </div>
-    @if(!isset($showDescription) || !empty($showDescription))
         <div class="post-excerpt mb-25">
             <p>{!! clean($post->description) !!}</p>
         </div>
-    @endif
 </div>

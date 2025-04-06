@@ -12,7 +12,6 @@
                                     <a class="img-link" href="{{ $gallery->url }}"></a>
                                     <div class="post-content-overlay">
                                         <h6 class="post-title">
-                                            <a class="color-white" href="{{ $gallery->url }}">{{ $gallery->name }}</a>
                                         </h6>
                                         <div class="entry-meta meta-1 font-small color-grey mt-10 pr-5 pl-5">
                                     <span

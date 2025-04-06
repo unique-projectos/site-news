@@ -1,12 +1,6 @@
 <div class="entry-header single-header-default entry-header-1 mb-30">
     @php $category = $post->categories->first(); @endphp
-    @if ($category)
-        <div class="entry-meta meta-0 font-small mb-15">
-            <a href="{{ $category->url }}">
-                <span class="post-cat {{ random_background() }} color-white">{{ $category->name }}</span>
-            </a>
-        </div>
-    @endif
+
     <h1 class="post-title">
         <a href="{{ get_external_link($post) }}" {{ is_external_link($post) ? 'target="_blank"' : '' }}>{{ $post->name }}</a>
     </h1>

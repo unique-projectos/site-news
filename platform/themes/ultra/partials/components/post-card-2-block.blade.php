@@ -7,12 +7,6 @@
              data-bg="{{ RvMedia::getImageUrl($post->image, 'medium', false, RvMedia::getDefaultImage()) }}"
              style="background-image: url({{ RvMedia::getImageUrl(theme_option('img_loading')) }})">
             <a class="img-link" href="{{ get_external_link($post) }}" {{ is_external_link($post) ? 'target="_blank"' : '' }}></a>
-            @if(is_video_post($post))
-                <span class="top-right-icon background3"><i class="ti-video-camera"></i></span>
-            @endif
-            @if(is_external_link($post))
-                <span class="top-right-icon background10"><i class="ti-link" aria-hidden="true"></i></span>
-            @endif
         </div>
         <ul class="social-share">
             <li><a href="#"><i class="ti-sharethis"></i></a></li>
@@ -25,11 +19,7 @@
     <div class="post-content">
         <div class="entry-meta meta-0 font-small mb-15">
             @php $category = $post->categories->first(); @endphp
-            @if ($category)
-                <a href="{{ $category->url }}">
-                    <span class="post-cat {{ random_background() }} color-white">{{ $category->name }}</span>
-                </a>
-            @endif
+       
         </div>
         <h4 class="post-title">
             <a href="{{ get_external_link($post) }}" {{ is_external_link($post) ? 'target="_blank"' : '' }}>
