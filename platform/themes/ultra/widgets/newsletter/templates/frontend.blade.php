@@ -11,7 +11,7 @@
                     <input type="email" name="email" id="newsletter-form-email"
                            placeholder="{{ __('Enter your email') }}"
                            style="border-top-color: #fff!important;"
-                           class="placeholder form-control hide-on-focus" onfocus="this.placeholder = ''"
+                           class="placeholder form-control text-white hide-on-focus" onfocus="this.placeholder = ''"
                            onblur="this.placeholder = ' Email Address '">
                     <div class="form-icon">
                         <button type="submit" name="submit" id="newsletter-submit"
