@@ -1,20 +1,24 @@
 @php Theme::layout('no-breadcrumbs') @endphp
 
 <!--main content-->
-<div class="main_content shop background12">
+<div class="main_content shop" style="background-color: #005236;color:white">
     <div class="container pb-100">
         <div class="row justify-content-center">
             <div class="col-xl-6 col-md-10">
-                <div class="login_wrap widget-taber-content p-30 background-white border-radius-5 mt-100 ">
-                    <div class="padding_eight_all bg-white">
-                        <div class="heading_s1">
-                            <h3 class="mb-30">{{ __('Register') }}</h3>
-                        </div>
+                <div class="login_wrap widget-taber-content p-30 background-white border-radius-5 mt-100 " style="background-color: #005236;color:white">
+                <div class="d-flex justify-content-center mb-1">
+        <img src="/themes/ultra/images/logos/luele.png" alt="logo" height="110px" width="50%"/>
+    </div>  
+                <div class="padding_eight_all " >
+                     
 
                         @include(Theme::getThemeNamespace() . '::views.news.account.auth.includes.messages')
 
-                        <form method="POST" class="simple-form" action="{{ route('public.member.register') }}">
-                            @csrf
+                        <form method="POST" class="simple-form" action="{{ route('public.member.register') }}" style="background-color: #005236;color:white">
+                            @csrf  
+                             <div class="heading_s1">
+                            <h3 class="mb-30 text-white">{{ __('Register') }}</h3>
+                        </div>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
@@ -109,7 +113,8 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-fill-out btn-block">
+                                <button type="submit" class="btn btn-fill-out btn-block" style="background-color: #fff;color:black;"
+                                >
                                     {{ __('Submit') }}
                                 </button>
                             </div>
@@ -129,5 +134,21 @@
                 </div>
             </div>
         </div>
+        <div class="footer-border">
+                <div class="row d-flex align-items-center justify-content-between">
+                    <div class="col-lg-12">
+                        <div class="footer-copy-right">
+                            <p class="font-medium text-center text-white">
+                            </p><div class="d-flex align-items-center justify-content-center gap-2 text-secondary-color fs-5 flex-lg-row footer-change flex-sm-column">
+                                <div class="row align-items-center ">
+                                    <h6 class="text-white">Desenvolvido com <span style="font-size: 20px;">❤️</span> pela </h6>
+                                </div><span><a class="mx-3" href="https://jftech.ao" target="_blank"><img src="https://posdpq.pna.ao/assets/img/footer_jftech.png" alt="JFTech-Logotipo" style="width: 55px; height: 55px;"></a></span><!----><!----><!---->
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
     </div>
 </div>
