@@ -1,39 +1,46 @@
-name: PHPBuild
+name: PHP Composer Workflow # Nome descritivo para o workflow
 
 on:
   push:
-    branches: [ "dev" ]
+    branches: [ "dev" ] # Executa o workflow em pushes para a branch "dev"
   pull_request:
-    branches: [ "dev" ]
+    branches: [ "dev" ] # Executa o workflow em pull requests para a branch "dev"
 
 permissions:
-  contents: read
+  contents: read # Permissão para ler o conteúdo do repositório
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Executa o workflow em um ambiente Ubuntu
 
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout code # Baixa o código do repositório
+        uses: actions/checkout@v4
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate --strict
+      - name: Setup PHP # Configura o ambiente PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1' # Versão do PHP (ajuste conforme necessário)
+          extensions: mbstring, zip, xml, ctype, pdo, sqlite, pdo_sqlite, bcmath, gd # Extensões PHP necessárias
+          tools: composer:v2 # Instala o Composer versão 2
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+      - name: Validate composer.json and composer.lock # Valida os arquivos do Composer
+        run: composer validate --strict
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
+      - name: Cache Composer packages # Armazena em cache as dependências do Composer
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
+      - name: Install dependencies # Instala as dependências do Composer
+        run: composer install --prefer-dist --no-progress
 
-    # - name: Run test suite
-    #   run: composer run-script test
+      # Adicione um script de teste ao composer.json, por exemplo: "test": "vendor/bin/phpunit"
+      # Documentação: https://getcomposer.org/doc/articles/scripts.md
+
+      # - name: Run test suite # Executa os testes (se houver)
+      #   run: composer run-script test
